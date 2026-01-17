@@ -1,0 +1,41 @@
+<svg width="440" height="280" viewBox="0 0 440 280" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+  </defs>
+  <rect width="440" height="280" rx="16" fill="url(#bgGradient)"/>
+
+  <!-- Icon on the left -->
+  <g transform="translate(40, 70)">
+    <!-- Clip path to contain bars within circle -->
+    <defs>
+      <clipPath id="circleClip">
+        <circle cx="70" cy="70" r="54"/>
+      </clipPath>
+    </defs>
+
+    <!-- Bar chart columns (clipped to circle) -->
+    <g clip-path="url(#circleClip)">
+      <rect x="22" y="60" width="22" height="55" rx="3" fill="white" opacity="0.9"/>
+      <rect x="49" y="38" width="22" height="77" rx="3" fill="white" opacity="0.9"/>
+      <rect x="76" y="50" width="22" height="65" rx="3" fill="white" opacity="0.9"/>
+    </g>
+
+    <!-- Prohibition circle -->
+    <circle cx="70" cy="70" r="58" fill="none" stroke="white" stroke-width="8"/>
+
+    <!-- Diagonal strike-through -->
+    <line x1="29" y1="29" x2="111" y2="111" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Text on the right -->
+  <text x="220" y="125" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="white">Internal Traffic</text>
+  <text x="220" y="165" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="white">Filter</text>
+
+  <!-- Tagline -->
+  <text x="220" y="210" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="white" opacity="0.9">Block your visits from Umami</text>
+  <text x="220" y="230" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="white" opacity="0.9">&amp; datafa.st analytics</text>
+</svg>

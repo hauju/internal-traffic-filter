@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internal Traffic Filter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Internal Traffic Filter</h1>
+
+    <div class="current-site">
+      <h2>Current Site</h2>
+      <div id="currentDomain" class="domain-display">Loading...</div>
+      <button id="toggleBtn" class="btn btn-disable">Disable Tracking</button>
+      <div id="status" class="status"></div>
+    </div>
+
+    <div class="blocked-sites">
+      <h2>Blocked Sites</h2>
+      <div id="blockedList" class="blocked-list"></div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

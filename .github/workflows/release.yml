@@ -1,0 +1,36 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get version from tag
+        id: version
+        run: echo "version=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
+
+      - name: Create extension package
+        run: |
+          mkdir -p dist
+          zip -r "dist/internal-traffic-filter-v${{ steps.version.outputs.version }}.zip" \
+            manifest.json \
+            content.js \
+            background.js \
+            popup.html \
+            popup.js \
+            popup.css \
+            LICENSE \
+            PRIVACY.md \
+            icons/*.png
+
+      - name: Upload release asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/internal-traffic-filter-v${{ steps.version.outputs.version }}.zip
