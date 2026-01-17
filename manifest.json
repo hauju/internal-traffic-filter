@@ -6,11 +6,7 @@
   "homepage_url": "https://github.com/hauju/internal-traffic-filter",
   "permissions": [
     "storage",
-    "activeTab",
-    "scripting"
-  ],
-  "host_permissions": [
-    "<all_urls>"
+    "activeTab"
   ],
   "action": {
     "default_popup": "popup.html",
