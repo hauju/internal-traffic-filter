@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Internal Traffic Filter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Filter out your own visits from Umami and datafa.st analytics",
   "homepage_url": "https://github.com/hauju/internal-traffic-filter",
   "permissions": [

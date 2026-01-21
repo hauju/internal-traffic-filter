@@ -7,86 +7,130 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   width: 350px;
-  background: #f5f5f5;
+  background: #fafafa;
+  line-height: 1.5;
 }
 
 .container {
-  padding: 20px;
+  padding: 24px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.header-logo {
+  width: 24px;
+  height: 24px;
 }
 
 h1 {
   font-size: 18px;
-  color: #333;
-  margin-bottom: 20px;
-  text-align: center;
+  font-weight: 600;
+  color: #1a1a1a;
 }
 
 h2 {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
+/* Cards */
 .current-site {
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
+.blocked-sites {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Domain display */
 .domain-display {
-  padding: 10px;
-  background: #f0f0f0;
-  border-radius: 4px;
-  margin-bottom: 15px;
-  font-family: monospace;
+  padding: 10px 12px;
+  background: #f4f4f5;
+  border: 1px solid #e4e4e7;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-family: 'SF Mono', Monaco, Consolas, monospace;
   font-size: 12px;
+  color: #1a1a1a;
   word-break: break-all;
 }
 
+/* Buttons */
 .btn {
   width: 100%;
-  padding: 10px;
+  padding: 10px 16px;
   margin-bottom: 10px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 13px;
   font-weight: 500;
-  transition: all 0.2s;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 .btn:active {
-  transform: translateY(0);
+  transform: none;
 }
 
 .btn-enable {
-  background: #10b981;
+  background: #059669;
   color: white;
 }
 
 .btn-enable:hover {
-  background: #059669;
+  background: #047857;
+}
+
+.btn-enable:focus {
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.3);
 }
 
 .btn-disable {
-  background: #ef4444;
+  background: #dc2626;
   color: white;
 }
 
 .btn-disable:hover {
-  background: #dc2626;
+  background: #b91c1c;
 }
 
+.btn-disable:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.3);
+}
+
+/* Status messages */
 .status {
-  padding: 8px;
-  border-radius: 4px;
+  padding: 10px 12px;
+  border-radius: 6px;
   font-size: 12px;
   text-align: center;
   display: none;
@@ -97,22 +141,18 @@ h2 {
 }
 
 .status.success {
-  background: #d1fae5;
+  background: #ecfdf5;
   color: #065f46;
+  border: 1px solid #a7f3d0;
 }
 
 .status.error {
-  background: #fee2e2;
+  background: #fef2f2;
   color: #991b1b;
+  border: 1px solid #fecaca;
 }
 
-.blocked-sites {
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
+/* Blocked list */
 .blocked-list {
   max-height: 200px;
   overflow-y: auto;
@@ -122,10 +162,11 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px;
-  margin-bottom: 5px;
-  background: #f9fafb;
-  border-radius: 4px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background: #fafafa;
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
   font-size: 12px;
 }
 
@@ -134,30 +175,58 @@ h2 {
 }
 
 .blocked-domain {
-  font-family: monospace;
-  color: #374151;
+  font-family: 'SF Mono', Monaco, Consolas, monospace;
+  color: #1a1a1a;
   flex: 1;
   word-break: break-all;
 }
 
+/* Remove button - outline style */
 .remove-btn {
-  background: #ef4444;
-  color: white;
-  border: none;
-  padding: 4px 8px;
-  border-radius: 3px;
+  background: transparent;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+  padding: 4px 10px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 11px;
-  margin-left: 10px;
+  font-weight: 500;
+  margin-left: 12px;
+  transition: all 0.15s ease;
 }
 
 .remove-btn:hover {
-  background: #dc2626;
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.remove-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
 }
 
 .empty-message {
   text-align: center;
   color: #9ca3af;
-  font-size: 12px;
-  padding: 20px;
+  font-size: 13px;
+  padding: 24px;
+}
+
+/* Footer */
+.footer {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.footer a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer a:hover {
+  color: #1a1a1a;
 }
